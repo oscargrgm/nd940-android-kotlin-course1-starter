@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 apply from: '../dependencies.gradle'
 
 android {
@@ -14,16 +15,23 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        dataBinding true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
@@ -34,11 +42,16 @@ dependencies {
 
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    // Android
     implementation libraries.appCompat
-    implementation libraries.coreKtx
-    implementation libraries.material
     implementation libraries.constraintLayout
+    implementation libraries.coreKtx
     implementation libraries.lifecycleExtensions
+    implementation libraries.material
+    implementation libraries.navigationFragmentKtx
+    implementation libraries.navigationUiKtx
+
+    // Timber
     implementation libraries.timber
 
     testImplementation libraries.junit
