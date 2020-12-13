@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+
+    <!-- Login -->
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">password</string>
+    <string name="login_create_account_button">Create account</string>
+    <string name="login_login_button">Login</string>
+
+    <!-- Welcome -->
+    <string name="welcome_quote_welcome">Hello %s!\n\nWelcome to the ShoeStore, the best place to by shoes for an unbeatable price.</string>
 </resources>
