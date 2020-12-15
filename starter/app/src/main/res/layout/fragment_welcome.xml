@@ -18,14 +18,46 @@
         android:paddingVertical="32dp">
 
         <TextView
-            android:id="@+id/welcome_tv"
+            android:id="@+id/welcome_title_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{@string/welcome_quote_welcome(welcomeViewModel.user.email)}"
+            android:gravity="center"
+            android:text="@{@string/welcome_title(welcomeViewModel.user.email)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Hello Óscar. Welcome to the ShoeStore, the best place to by shoes at an unbeatable price." />
+            tools:text="Hello Óscar!" />
+
+        <TextView
+            android:id="@+id/welcome_description_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/welcome_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome_title_tv" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/welcome_shoe_animation_lav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome_description_tv"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="sneaker_outlined.json"
+            app:lottie_loop="true"
+            app:lottie_repeatMode="reverse" />
+
+        <Button
+            android:id="@+id/welcome_navigation_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

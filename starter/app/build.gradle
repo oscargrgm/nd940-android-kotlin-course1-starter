@@ -53,7 +53,8 @@ dependencies {
     implementation libraries.navigationFragmentKtx
     implementation libraries.navigationUiKtx
 
-    // Timber
+    // Others
+    implementation libraries.lottie
     implementation libraries.timber
 
     testImplementation libraries.junit
