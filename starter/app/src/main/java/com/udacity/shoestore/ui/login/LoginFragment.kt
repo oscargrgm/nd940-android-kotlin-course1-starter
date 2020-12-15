@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
                 } else {
                     Toast.makeText(
                         requireContext(),
-                        "The email is already registered.",
+                        getString(R.string.login_email_already_registered),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -69,7 +69,7 @@ class LoginFragment : Fragment() {
                 } else {
                     Toast.makeText(
                         requireContext(),
-                        "Email or password is incorrect.",
+                        getString(R.string.login_invalid_credentials),
                         Toast.LENGTH_SHORT
                     ).show()
                 }

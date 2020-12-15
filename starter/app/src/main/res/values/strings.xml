@@ -6,6 +6,8 @@
     <string name="login_password_hint">password</string>
     <string name="login_create_account_button">Create account</string>
     <string name="login_login_button">Login</string>
+    <string name="login_email_already_registered">The email is already registered</string>
+    <string name="login_invalid_credentials">Email or password incorrect</string>
 
     <!-- Welcome -->
     <string name="welcome_title">Hello %s!</string>
