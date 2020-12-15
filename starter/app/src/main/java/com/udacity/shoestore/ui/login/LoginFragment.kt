@@ -30,49 +30,45 @@ class LoginFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
-        with(binding) {
-            lifecycleOwner = viewLifecycleOwner
+        binding.lifecycleOwner = viewLifecycleOwner
 
-            createAccountBt.setOnClickListener {
-                val email = emailEt.text.toString()
-                val password = passEt.text.toString()
-                viewModel.onCreateAccountButtonClicked(email, password)
-            }
+        binding.createAccountBt.setOnClickListener {
+            val email = binding.emailEt.text.toString()
+            val password = binding.passEt.text.toString()
+            viewModel.onCreateAccountButtonClicked(email, password)
+        }
 
-            loginBt.setOnClickListener {
-                val email = emailEt.text.toString()
-                val password = passEt.text.toString()
-                viewModel.onLoginButtonClicked(email, password)
+        binding.loginBt.setOnClickListener {
+            val email = binding.emailEt.text.toString()
+            val password = binding.passEt.text.toString()
+            viewModel.onLoginButtonClicked(email, password)
+        }
+
+        viewModel.isNewAccount.observe(viewLifecycleOwner) { isNewAccount ->
+            if (isNewAccount) {
+                findNavController().navigate(
+                    LoginFragmentDirections.actionLoginFragmentToWelcomeFragment(viewModel.user)
+                )
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.login_email_already_registered),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
-        with(viewModel) {
-            isNewAccount.observe(viewLifecycleOwner) { isNewAccount ->
-                if (isNewAccount) {
-                    findNavController().navigate(
-                        LoginFragmentDirections.actionLoginFragmentToWelcomeFragment(user)
-                    )
-                } else {
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.login_email_already_registered),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-
-            isLogged.observe(viewLifecycleOwner) { isLogged ->
-                if (isLogged) {
-                    findNavController().navigate(
-                        LoginFragmentDirections.actionLoginFragmentToWelcomeFragment(user)
-                    )
-                } else {
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.login_invalid_credentials),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+        viewModel.isLogged.observe(viewLifecycleOwner) { isLogged ->
+            if (isLogged) {
+                findNavController().navigate(
+                    LoginFragmentDirections.actionLoginFragmentToWelcomeFragment(viewModel.user)
+                )
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.login_invalid_credentials),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 

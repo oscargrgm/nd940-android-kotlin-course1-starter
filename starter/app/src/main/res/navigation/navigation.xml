@@ -34,5 +34,13 @@
         <argument
             android:name="user"
             app:argType="com.udacity.shoestore.models.User" />
+        <action
+            android:id="@+id/action_instructionsFragment_to_shoeListingFragment"
+            app:destination="@id/shoeListingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/shoeListingFragment"
+        android:name="com.udacity.shoestore.ui.shoelisting.ShoeListingFragment"
+        android:label="ShoeListingFragment"
+        tools:layout="@layout/fragment_shoe_listing" />
 </navigation>

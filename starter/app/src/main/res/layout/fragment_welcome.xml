@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="welcomeViewModel"
+            name="viewModel"
             type="com.udacity.shoestore.ui.welcome.WelcomeViewModel" />
     </data>
 
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{@string/welcome_title(welcomeViewModel.user.email)}"
+            android:text="@{@string/welcome_title(viewModel.user.email)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

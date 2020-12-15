@@ -5,7 +5,7 @@
     <data>
 
         <variable
-            name="instructionsViewModel"
+            name="viewModel"
             type="com.udacity.shoestore.ui.instructions.InstructionsViewModel" />
     </data>
 
@@ -20,7 +20,7 @@
             android:id="@+id/instructions_title_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{@string/instructions_title(instructionsViewModel.user.email)}"
+            android:text="@{@string/instructions_title(viewModel.user.email)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

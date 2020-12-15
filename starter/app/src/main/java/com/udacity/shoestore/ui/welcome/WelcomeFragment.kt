@@ -34,16 +34,14 @@ class WelcomeFragment : Fragment() {
         viewModel = ViewModelProvider(viewModelStore, viewModelFactory)
             .get(WelcomeViewModel::class.java)
 
-        with(binding) {
-            welcomeViewModel = viewModel
-            lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
 
-            welcomeNavigationBt.setOnClickListener {
-                findNavController().navigate(
-                    WelcomeFragmentDirections
-                        .actionWelcomeFragmentToInstructionsFragment(viewModel.user)
-                )
-            }
+        binding.welcomeNavigationBt.setOnClickListener {
+            findNavController().navigate(
+                WelcomeFragmentDirections
+                    .actionWelcomeFragmentToInstructionsFragment(viewModel.user)
+            )
         }
 
         return binding.root

@@ -33,7 +33,7 @@ class InstructionsFragment : Fragment() {
         viewModel = ViewModelProvider(viewModelStore, viewModelFactory)
             .get(InstructionsViewModel::class.java)
 
-        binding.instructionsViewModel = viewModel
+        binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
         return binding.root
