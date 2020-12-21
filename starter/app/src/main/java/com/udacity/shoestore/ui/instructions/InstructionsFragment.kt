@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
@@ -36,6 +37,14 @@ class InstructionsFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        binding.instructionsNextBt.setOnClickListener { onNextButtonClicked() }
+
         return binding.root
+    }
+
+    private fun onNextButtonClicked() {
+        findNavController().navigate(
+            InstructionsFragmentDirections.actionInstructionsFragmentToShoeListingFragment()
+        )
     }
 }

@@ -42,5 +42,14 @@
         android:id="@+id/shoeListingFragment"
         android:name="com.udacity.shoestore.ui.shoelisting.ShoeListingFragment"
         android:label="ShoeListingFragment"
-        tools:layout="@layout/fragment_shoe_listing" />
+        tools:layout="@layout/fragment_shoe_listing">
+        <action
+            android:id="@+id/action_shoeListingFragment_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.udacity.shoestore.ui.shoedetail.ShoeDetailFragment"
+        android:label="ShoeDetailFragment"
+        tools:layout="@layout/fragment_shoe_detail" />
 </navigation>
