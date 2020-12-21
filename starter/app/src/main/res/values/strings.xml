@@ -10,12 +10,12 @@
     <string name="login_invalid_credentials">Email or password incorrect</string>
 
     <!-- Welcome -->
-    <string name="welcome_title">Hello %s!</string>
+    <string name="welcome_title">Hello!</string>
     <string name="welcome_description">Welcome to the ShoeStore, the best place to buy your favourite shoes for an unbeatable price.</string>
     <string name="welcome_button">Next</string>
 
     <!-- Instructions -->
-    <string name="instructions_title">Well %s, let\'s start with some basic instructions.</string>
+    <string name="instructions_title">Well, let\'s start with some basic instructions.</string>
     <string name="instructions_description">The shoe listing page will show the list of shoes and show a button for adding a new shoe, while the detail page will be for adding a shoe entry.\n\nAll entries will be saved only as long as the app is running.</string>
     <string name="instructions_button">Next</string>
 
@@ -30,4 +30,5 @@
     <string name="shoe_detail_description_hint">Description</string>
     <string name="shoe_detail_cancel_button">Cancel</string>
     <string name="shoe_detail_accept_button">Accept</string>
+    <string name="main_menu_logout">Logout</string>
 </resources>

@@ -2,13 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.udacity.shoestore.ui.MainActivityViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/instructions_layout"
         android:layout_width="match_parent"
@@ -20,7 +13,7 @@
             android:id="@+id/instructions_title_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{@string/instructions_title(viewModel.user.email)}"
+            android:text="@string/instructions_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

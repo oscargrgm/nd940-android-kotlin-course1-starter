@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/show_item_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,33 +15,38 @@
 
         <TextView
             android:id="@+id/shoe_item_name_tv"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Model: Air Force 1 '07" />
-
-        <TextView
-            android:id="@+id/shoe_item_size_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Size: 45" />
+            tools:text="Air Force 1 '07" />
 
         <TextView
             android:id="@+id/shoe_item_company_tv"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_item_name_tv"
-            tools:text="Company: Nike" />
+            tools:text="Nike" />
+
+        <TextView
+            android:id="@+id/shoe_item_size_tv"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/shoe_item_name_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/shoe_item_name_tv"
+            tools:text="45" />
 
         <TextView
             android:id="@+id/shoe_item_description_tv"
-            android:layout_width="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_item_company_tv"
@@ -48,4 +54,13 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.cardview.widget.CardView>
+    <View
+        android:id="@+id/shoe_item_separator_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shoe_item_description_tv" />
+
+</LinearLayout>

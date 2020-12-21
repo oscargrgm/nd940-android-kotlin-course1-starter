@@ -3,13 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.udacity.shoestore.ui.MainActivityViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome_layout"
         android:layout_width="match_parent"
@@ -22,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{@string/welcome_title(viewModel.user.email)}"
+            android:text="@string/welcome_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

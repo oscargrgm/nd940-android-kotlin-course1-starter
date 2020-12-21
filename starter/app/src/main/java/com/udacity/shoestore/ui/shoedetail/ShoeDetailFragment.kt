@@ -6,15 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
-import com.udacity.shoestore.ui.MainActivityViewModel
+import com.udacity.shoestore.ui.MainActivity
 
 class ShoeDetailFragment : Fragment() {
-
-    lateinit var viewModel: MainActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +25,7 @@ class ShoeDetailFragment : Fragment() {
             false
         )
 
-        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+        val viewModel = (activity as MainActivity).viewModel
 
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -40,10 +37,10 @@ class ShoeDetailFragment : Fragment() {
 
         binding.shoeDetailAcceptBt.setOnClickListener {
             viewModel.isValidShoe(
-                binding.shoeDetailNameEt.text.toString(),
-                binding.shoeDetailCompanyEt.text.toString(),
-                binding.shoeDetailSizeEt.text.toString(),
-                binding.shoeDetailDescriptionEt.text.toString()
+                name = binding.shoeDetailNameEt.text.toString(),
+                size = binding.shoeDetailSizeEt.text.toString(),
+                company = binding.shoeDetailCompanyEt.text.toString(),
+                description = binding.shoeDetailDescriptionEt.text.toString()
             )
 
             findNavController().navigate(
@@ -52,6 +49,7 @@ class ShoeDetailFragment : Fragment() {
             )
         }
 
+        setHasOptionsMenu(false)
         return binding.root
     }
 }
