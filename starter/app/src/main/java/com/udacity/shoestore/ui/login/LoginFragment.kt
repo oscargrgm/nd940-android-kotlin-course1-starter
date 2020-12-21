@@ -11,10 +11,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
+import com.udacity.shoestore.ui.MainActivityViewModel
 
 class LoginFragment : Fragment() {
 
-    private lateinit var viewModel: LoginViewModel
+    private lateinit var viewModel: MainActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,26 +29,26 @@ class LoginFragment : Fragment() {
             false
         )
 
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.createAccountBt.setOnClickListener {
             val email = binding.emailEt.text.toString()
             val password = binding.passEt.text.toString()
-            viewModel.onCreateAccountButtonClicked(email, password)
+            viewModel.isValidUser(email, password)
         }
 
         binding.loginBt.setOnClickListener {
             val email = binding.emailEt.text.toString()
             val password = binding.passEt.text.toString()
-            viewModel.onLoginButtonClicked(email, password)
+            viewModel.isValidUser(email, password)
         }
 
-        viewModel.isNewAccount.observe(viewLifecycleOwner) { isNewAccount ->
-            if (isNewAccount) {
+        viewModel.isLogged.observe(viewLifecycleOwner) { isLogged ->
+            if (isLogged) {
                 findNavController().navigate(
-                    LoginFragmentDirections.actionLoginFragmentToWelcomeFragment(viewModel.user)
+                    LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
                 )
             } else {
                 Toast.makeText(
@@ -61,7 +62,7 @@ class LoginFragment : Fragment() {
         viewModel.isLogged.observe(viewLifecycleOwner) { isLogged ->
             if (isLogged) {
                 findNavController().navigate(
-                    LoginFragmentDirections.actionLoginFragmentToWelcomeFragment(viewModel.user)
+                    LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
                 )
             } else {
                 Toast.makeText(

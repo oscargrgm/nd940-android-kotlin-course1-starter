@@ -11,10 +11,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
+import com.udacity.shoestore.ui.MainActivityViewModel
 
 class InstructionsFragment : Fragment() {
 
-    private lateinit var viewModel: InstructionsViewModel
+    private lateinit var viewModel: MainActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,11 +29,7 @@ class InstructionsFragment : Fragment() {
             false
         )
 
-        val instructionsArguments by navArgs<InstructionsFragmentArgs>()
-
-        val viewModelFactory = InstructionsViewModelFactory(instructionsArguments.user)
-        viewModel = ViewModelProvider(viewModelStore, viewModelFactory)
-            .get(InstructionsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner

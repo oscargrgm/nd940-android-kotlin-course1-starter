@@ -11,10 +11,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentWelcomeBinding
+import com.udacity.shoestore.ui.MainActivityViewModel
 
 class WelcomeFragment : Fragment() {
 
-    private lateinit var viewModel: WelcomeViewModel
+    private lateinit var viewModel: MainActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,11 +29,7 @@ class WelcomeFragment : Fragment() {
             false
         )
 
-        val welcomeArguments by navArgs<WelcomeFragmentArgs>()
-
-        val viewModelFactory = WelcomeViewModelFactory(welcomeArguments.user)
-        viewModel = ViewModelProvider(viewModelStore, viewModelFactory)
-            .get(WelcomeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -40,7 +37,7 @@ class WelcomeFragment : Fragment() {
         binding.welcomeNavigationBt.setOnClickListener {
             findNavController().navigate(
                 WelcomeFragmentDirections
-                    .actionWelcomeFragmentToInstructionsFragment(viewModel.user)
+                    .actionWelcomeFragmentToInstructionsFragment()
             )
         }
 

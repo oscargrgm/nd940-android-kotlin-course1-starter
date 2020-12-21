@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.udacity.shoestore.ui.instructions.InstructionsViewModel" />
+            type="com.udacity.shoestore.ui.MainActivityViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
