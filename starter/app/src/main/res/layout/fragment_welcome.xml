@@ -12,45 +12,59 @@
 
         <TextView
             android:id="@+id/welcome_title_tv"
+            style="@style/TextAppearance.MaterialComponents.Headline2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="@string/welcome_title"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/welcome_description_tv"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Hello Óscar!" />
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            tools:text="Hello!" />
 
         <TextView
             android:id="@+id/welcome_description_tv"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/welcome_description"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/welcome_shoe_animation_lav"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome_title_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/welcome_title_tv" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/welcome_shoe_animation_lav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/welcome_navigation_bt"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome_description_tv"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_description_tv"
             app:lottie_autoPlay="true"
             app:lottie_fileName="sneaker_outlined.json"
             app:lottie_loop="true"
-            app:lottie_repeatMode="reverse" />
+            app:lottie_repeatMode="reverse"
+            app:lottie_speed="0.8" />
 
         <Button
             android:id="@+id/welcome_navigation_bt"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome_button"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_shoe_animation_lav" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -2,6 +2,8 @@
     <string name="app_name">ShoeStore</string>
 
     <!-- Login -->
+    <string name="login_welcome_title">Welcome</string>
+    <string name="login_welcome_description">Please type your email and password and select one of the options below.</string>
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">password</string>
     <string name="login_create_account_button">Create account</string>
@@ -10,8 +12,8 @@
     <string name="login_invalid_credentials">Email or password incorrect</string>
 
     <!-- Welcome -->
-    <string name="welcome_title">Hello!</string>
-    <string name="welcome_description">Welcome to the ShoeStore, the best place to buy your favourite shoes for an unbeatable price.</string>
+    <string name="welcome_title">First things first.</string>
+    <string name="welcome_description">On the ShoeStore application you will be able to add your favourite shoes to your personal collection.</string>
     <string name="welcome_button">Next</string>
 
     <!-- Instructions -->
@@ -30,5 +32,6 @@
     <string name="shoe_detail_description_hint">Description</string>
     <string name="shoe_detail_cancel_button">Cancel</string>
     <string name="shoe_detail_accept_button">Accept</string>
+
     <string name="main_menu_logout">Logout</string>
 </resources>
