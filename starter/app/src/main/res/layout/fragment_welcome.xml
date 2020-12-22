@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="16dp"
         android:paddingVertical="32dp">
 
         <TextView
             android:id="@+id/welcome_title_tv"
-            style="@style/TextAppearance.MaterialComponents.Headline2"
+            style="@style/AppTheme.TextView.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
             android:text="@string/welcome_title"
-            android:textColor="@color/colorAccent"
             app:layout_constraintBottom_toTopOf="@+id/welcome_description_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintVertical_chainStyle="spread_inside"
-            tools:text="Hello!" />
+            app:layout_constraintVertical_chainStyle="spread_inside" />
 
         <TextView
             android:id="@+id/welcome_description_tv"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
+            style="@style/AppTheme.TextView.Subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:paddingHorizontal="16dp"
             android:text="@string/welcome_description"
-            android:textColor="@color/colorAccent"
             app:layout_constraintBottom_toTopOf="@+id/welcome_shoe_animation_lav"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -52,8 +49,6 @@
             app:layout_constraintTop_toBottomOf="@+id/welcome_description_tv"
             app:lottie_autoPlay="true"
             app:lottie_fileName="sneaker_outlined.json"
-            app:lottie_loop="true"
-            app:lottie_repeatMode="reverse"
             app:lottie_speed="0.8" />
 
         <Button
@@ -61,6 +56,7 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
             android:text="@string/welcome_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
@@ -25,8 +26,9 @@ class ShoeDetailFragment : Fragment() {
             false
         )
 
-        val viewModel = (activity as MainActivity).viewModel
+        val viewModel = ViewModelProvider(this).get(ShoeDetailViewModel::class.java)
 
+        binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.shoeDetailCancelBt.setOnClickListener {
@@ -35,18 +37,15 @@ class ShoeDetailFragment : Fragment() {
             )
         }
 
-        binding.shoeDetailAcceptBt.setOnClickListener {
-            viewModel.isValidShoe(
-                name = binding.shoeDetailNameEt.text.toString(),
-                size = binding.shoeDetailSizeEt.text.toString(),
-                company = binding.shoeDetailCompanyEt.text.toString(),
-                description = binding.shoeDetailDescriptionEt.text.toString()
-            )
-
-            findNavController().navigate(
-                ShoeDetailFragmentDirections
-                    .actionShoeDetailFragmentToShoeListingFragment()
-            )
+        viewModel.isShoeAdded.observe(viewLifecycleOwner) { isValidShoe ->
+            if (isValidShoe) {
+                // Add shoe into the MainActivity shoe list.
+                (activity as MainActivity).viewModel.shoeList.value?.add(viewModel.shoe)
+                findNavController().navigate(
+                    ShoeDetailFragmentDirections
+                        .actionShoeDetailFragmentToShoeListingFragment()
+                )
+            }
         }
 
         setHasOptionsMenu(false)

@@ -44,6 +44,11 @@
         <action
             android:id="@+id/action_shoeListingFragment_to_shoeDetailFragment"
             app:destination="@id/shoeDetailFragment" />
+        <action
+            android:id="@+id/action_shoeListingFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/shoeListingFragment"
+            app:popUpToInclusive="true" /> <!-- Clear from backstack -->
     </fragment>
     <fragment
         android:id="@+id/shoeDetailFragment"
