@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+
+    <!-- Login -->
+    <string name="login_welcome_title">Welcome</string>
+    <string name="login_welcome_description">Please type your email and password and select one of the options below.</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">password</string>
+    <string name="login_create_account_button">Create account</string>
+    <string name="login_login_button">Login</string>
+    <string name="login_email_already_registered">The email is already registered</string>
+    <string name="login_invalid_credentials">Email or password incorrect</string>
+
+    <!-- Welcome -->
+    <string name="welcome_title">First things first.</string>
+    <string name="welcome_description">On the ShoeStore application you will be able to add your favourite shoes to your personal collection.\n\nWe will show you how to in the next screen. Come on!</string>
+    <string name="welcome_button">Next</string>
+
+    <!-- Instructions -->
+    <string name="instructions_title">Let\'s start with some basic instructions.</string>
+    <string name="instructions_description">The shoe listing page will show the list of shoes and show a button for adding a new shoe, while the detail page will be for adding a shoe entry.\n\nAll entries will be saved only as long as the app is running.\n\nEnjoy!</string>
+    <string name="instructions_button">Next</string>
+
+    <!-- Shoe detail -->
+    <string name="shoe_detail_title">Add your shoes details.</string>
+    <string name="shoe_detail_name_label">Name:</string>
+    <string name="shoe_detail_name_hint">Name (e.g. Air Force 1 \'07)</string>
+    <string name="shoe_detail_company_label">Company:</string>
+    <string name="shoe_detail_company_hint">Company (e.g. Nike)</string>
+    <string name="shoe_detail_size_label">Size:</string>
+    <string name="shoe_detail_size_hint">Size (e.g. 45)</string>
+    <string name="shoe_detail_description_label">Description:</string>
+    <string name="shoe_detail_description_hint">Short (or long) description of your shoe</string>
+    <string name="shoe_detail_cancel_button">Cancel</string>
+    <string name="shoe_detail_accept_button">Accept</string>
+
+    <!-- Menu -->
+    <string name="main_menu_logout">Logout</string>
 </resources>
